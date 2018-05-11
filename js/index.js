@@ -16,7 +16,8 @@ s_p500.forEach(function(stock) {
     let url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol="+ stock + "&apikey=AATETE6GWV5ROGH";
     $.get(url, function(response) {
       console.log(response);
-      let data = JSON.parse(response);
+      var dataString = JSON.stringify(response);
+      let data = JSON.parse(dataString);
       print(data["Time Series (Daily)"][formatDate(new Date())]["1. high"]);
     });
     var start = new Date().getTime();
