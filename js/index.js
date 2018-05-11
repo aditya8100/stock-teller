@@ -21,6 +21,7 @@ s_p500.forEach(function(stock) {
       let date = new Date();
       let dateAsString1 = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
       let dateAsString2 = date.getFullYear() + "-" + date.getMonth() + "-" + (date.getDate() - 1);
+      console.log("New date: " + dateAsString1 +  ", Old date: " + dateAsString2);
       console.log("Today's data: " + data["Time Series (Daily)"][dateAsString1]["2. high"] + ", Yesterday's data: " + data["Time Series (Daily)"][dateAsString2]["2. high"]);
     });
     var start = new Date().getTime();
