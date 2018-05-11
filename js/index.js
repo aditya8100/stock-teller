@@ -18,7 +18,10 @@ s_p500.forEach(function(stock) {
       console.log(response);
       var dataString = JSON.stringify(response);
       let data = JSON.parse(dataString);
-      console.log(data["Time Series (Daily)"][]["2. high"]);
+      let date = new Date();
+      let dateAsString1 = date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate();
+      let dateAsString2 = date.getFullYear() + "-" + date.getMonth() + "-" + (date.getDate() - 1);
+      console.log("Today's data: " + data["Time Series (Daily)"][dateAsString1]["2. high"] + ", Yesterday's data: " + data["Time Series (Daily)"][dateAsString2]["2. high"]);
     });
     var start = new Date().getTime();
     for (var i = 0; i < 1e7; i++) {
