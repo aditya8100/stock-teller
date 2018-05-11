@@ -64,13 +64,21 @@ s_p500.forEach(function(stock) {
 
       let dateAsString2 = yearPart + "-" + monthPart + "-" + datePart;
       console.log("New date: " + dateAsString1 +  ", Old date: " + dateAsString2);
-      console.log("Today's data: " + data["Time Series (Daily)"][dateAsString1]["2. high"] + ", Yesterday's data: " + data["Time Series (Daily)"][dateAsString2]["2. high"]);
-    });
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
+      var todayHigh = data["Time Series (Daily)"][dateAsString1]["2. high"];
+      var yesterdayHigh = data["Time Series (Daily)"][dateAsString2]["2. high"];
+      console.log("Today's data: " + todayHigh + ", Yesterday's data: " + yesterdayHigh);
+      let percentage = ((yesterdayHigh - todayHigh)/yesterdayHigh) * 100;
 
-    if ((new Date().getTime() - start) > 50){
-      break;
-    }
-  }
+      if (percentage > -500) {
+        let elementAdd = "<p>" + stock + "</p>";
+        $("body").$('.content').append(elementAdd);
+      }
+      var start = new Date().getTime();
+      for (var i = 0; i < 1e7; i++) {
+        if ((new Date().getTime() - start) > 50)  {
+          break;
+        }
+      }
+    });
+    
 });
