@@ -18,7 +18,7 @@ s_p500.forEach(function(stock) {
       console.log(response);
       var dataString = JSON.stringify(response);
       let data = JSON.parse(dataString);
-      console.log(data["Time Series (Daily)"][formatDate(new Date())]);
+      console.log(data["Time Series (Daily)"]["2018-05-10"]);
     });
     var start = new Date().getTime();
     for (var i = 0; i < 1e7; i++) {
