@@ -69,9 +69,9 @@ s_p500.forEach(function(stock) {
       console.log("Today's data: " + todayHigh + ", Yesterday's data: " + yesterdayHigh);
       let percentage = ((yesterdayHigh - todayHigh)/yesterdayHigh) * 100;
 
-      if (percentage > -500) {
+      if (percentage > 8) {
         let elementAdd = "<p>" + stock + "</p>";
-        $("body").$('.content').append(elementAdd);
+        $('.content').append(elementAdd);
       }
       var start = new Date().getTime();
       for (var i = 0; i < 1e7; i++) {
