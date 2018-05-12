@@ -9,3 +9,12 @@
 .content {
     text-align: center;
 }
+
+#masthead {
+	font-size: 14px;
+}
+
+#footernav {
+   position:absolute;
+   bottom:0;
+}
