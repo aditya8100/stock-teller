@@ -60,7 +60,7 @@ var s_p500test = ["A","AAL","AAP","AAPL","ABBV","ABC","ABT","ACN","ADBE","COTY"]
 // let dateAsString2 = monthPart + "." + datePart + "." + yearPart;
 var i=0;
 $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
-s_p500test.forEach(function(stock) {
+s_p500.forEach(function(stock) {
     let today = 0, yesterday = 0, daybeforeyesterday = 0;
     let url = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol="+ stock + "&apikey=AATETE6GWV5ROGH";
     let url1 = "https://cors-anywhere.herokuapp.com/https://www.investopedia.com/markets/stocks/" + stock.toLowerCase() + "/historical/"
