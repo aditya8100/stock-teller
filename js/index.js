@@ -82,4 +82,4 @@ setInterval(function() {
   });
 
   // $('.loading').remove();
-}, 100000);
+}, 10000);
