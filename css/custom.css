@@ -19,3 +19,11 @@
    bottom:0;
    height:50px;   /* Height of the footer */
 }
+
+@media (max-width: 648px) {
+	#footernav {
+	  width: 90%;
+	  position:absolute;
+	  bottom:0;
+	 }
+   }
