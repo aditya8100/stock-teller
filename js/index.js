@@ -33,7 +33,7 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
   losers.forEach(element => {
     console.log('Inside foreach initial')
     // $('.loading').remove();
-    let toAppend = "<p class=\"loser\">" + element + "&nbsp;&nbsp;&nbsp;&nbsp;" + percentages[i] + "%</p>";
+    let toAppend = "<p class=\"loser\">" + element + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[i] + "%</p>";
     $('.content').append(toAppend);
     // $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
     i = i + 1;
@@ -74,7 +74,7 @@ setInterval(function() {
     losers.forEach(element => {
       console.log('Inside foreach refresh')
       // $('.loading').remove();
-      let toAppend = "<p class=\"loser\">" + element + "&nbsp;&nbsp;&nbsp;&nbsp;" + percentages[i] + "%</p>";
+      let toAppend = "<p class=\"loser\">" + element + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[i] + "%</p>";
       $('.content').append(toAppend);
       // $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
       i = i + 1;
@@ -82,4 +82,4 @@ setInterval(function() {
   });
 
   // $('.loading').remove();
-}, 1000);
+}, 100000);
