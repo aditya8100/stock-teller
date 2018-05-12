@@ -10,13 +10,10 @@
     text-align: center;
 }
 
-#masthead {
-	font-size: 14px;
-}
-
-#footernav {
+.footernav {
    position:absolute;
    bottom:0;
+   font-size: 14px;
    height:50px;   /* Height of the footer */
 }
 
@@ -24,6 +21,7 @@
 	#footernav {
 	  width: 100%;
 	  position: absolute;
+	  font-size: 11px;
 	  padding: 10%;
 	 }
    }
