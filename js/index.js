@@ -33,23 +33,24 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
   console.log(losers)
   console.log(percentages)
   var i=0;
-  losers.forEach(element => {
+  var j=0;
+  for(i=0; i < losers.length; i++) {
     console.log('Inside foreach initial')
-    $.get("https://cors-anywhere.herokuapp.com/https://www.investopedia.com/markets/stocks/" + element.toLowerCase() + "/historical/", function(response) {
+    $.get("https://cors-anywhere.herokuapp.com/https://www.investopedia.com/markets/stocks/" + losers[i].toLowerCase() + "/historical/", function(response) {
         const toCheck = "<span style=\"text-transform:none;\" id=\"quoteName\">";
         var indexOfName = response.indexOf(toCheck) + toCheck.length;
         var indexOfNameEnd = response.indexOf("</span>", indexOfName + 1);
         var name = response.substring(indexOfName,indexOfNameEnd);
         name = name.trim();
         console.log("name: " + name)
-        let toAppend = "<p class=\"loser\">" + name + " - " + element + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[i] + "%</p><br>";
+        let toAppend = "<p class=\"loser\">" + name + " - " + losers[j] + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[j] + "%</p><br>";
         $('.content').append(toAppend);
-        i = i + 1;
+        j++;
         $('.loading').remove();
     });
+  }
     // $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
     
-  });
 });
 
 setTimeout(function() {

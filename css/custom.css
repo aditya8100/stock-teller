@@ -36,10 +36,16 @@ body {
 
 @media only screen and (max-width: 850px) {
 	.footernav {
-		position: absolute;
+		position: relative;
 		bottom: 0;
 		font-size: 14px;
 		margin-bottom: 10px;
 		height: 50px;   /* Height of the footer */
+		background-color: white;
+	}
+
+	#footer {
+		min-height:100%;
+		position:relative;
 	}
 }
