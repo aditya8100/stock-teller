@@ -35,7 +35,6 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
   var i=0;
   losers.forEach(element => {
     console.log('Inside foreach initial')
-    $('.loading').remove();
     $.get("https://cors-anywhere.herokuapp.com/https://www.investopedia.com/markets/stocks/" + element.toLowerCase() + "/historical/", function(response) {
         const toCheck = "<span style=\"text-transform:none;\" id=\"quoteName\">";
         var indexOfName = response.indexOf(toCheck) + toCheck.length;
@@ -46,6 +45,7 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
         let toAppend = "<p class=\"loser\">" + name + " - " + element + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[i] + "%</p>";
         $('.content').append(toAppend);
         i = i + 1;
+        $('.loading').remove();
     });
     // $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
     
