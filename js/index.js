@@ -1,4 +1,4 @@
-$('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
+$('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"160\" width=\"241\" margin=\"0\" padding=\"0\"/>")
 
 // Initial
 $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.herokuapp.com/losers", function(response) {
@@ -39,6 +39,10 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
     i = i + 1;
   });
 });
+
+setTimeout(function() {
+  $('.loading').remove()
+}, 5000);
 
 setInterval(function() {
   // $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
