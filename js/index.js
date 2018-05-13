@@ -42,7 +42,7 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
         var name = response.substring(indexOfName,indexOfNameEnd);
         name = name.trim();
         console.log("name: " + name)
-        let toAppend = "<p class=\"loser\">" + name + " - " + element + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[i] + "%</p>";
+        let toAppend = "<p class=\"loser\">" + name + " - " + element + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[i] + "%</p><br>";
         $('.content').append(toAppend);
         i = i + 1;
         $('.loading').remove();
@@ -116,7 +116,7 @@ setInterval(function() {
         var name = response.substring(indexOfName,indexOfNameEnd);
         name = name.trim();
         console.log("name: " + name)
-        let toAppend = "<p class=\"loser\">" + name + " - " + element + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[i] + "%</p>";
+        let toAppend = "<p class=\"loser\">" + name + " - " + element + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[i] + "%</p><br>";
         $('.content').append(toAppend);
         i = i + 1;
       });
