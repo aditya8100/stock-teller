@@ -29,6 +29,7 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
   for(var i=0; i < percentages.length; i++) {
     percentages[i] = (percentages[i] * 1).toFixed(2);
   }
+  jQuery.ajaxSetup({async:false});
   
   console.log(losers)
   console.log(percentages)
@@ -50,12 +51,12 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
     });
   }
     // $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
-    
-});
+    jQuery.ajaxSetup({async:true});
+  });
 
 setTimeout(function() {
   $('.loading').remove()
-}, 5000);
+}, 30000);
 
 setInterval(function() {
   // $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
