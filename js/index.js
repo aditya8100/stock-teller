@@ -1,4 +1,4 @@
-// $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
+$('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
 
 // Initial
 $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.herokuapp.com/losers", function(response) {
@@ -32,7 +32,7 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
   var i=0;
   losers.forEach(element => {
     console.log('Inside foreach initial')
-    // $('.loading').remove();
+    $('.loading').remove();
     let toAppend = "<p class=\"loser\">" + element + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[i] + "%</p>";
     $('.content').append(toAppend);
     // $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
