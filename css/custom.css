@@ -10,11 +10,28 @@
     text-align: center;
 }
 
+#footer {
+	min-height:100%;
+	position:relative;
+}
+
 .footernav {
    position: absolute;
    bottom: 0;
    font-size: 12px;
    height: 50px;   /* Height of the footer */
+}
+
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+
+.wrapper {
+	min-height:100%;
+	margin-bottom:-75px;
 }
 
 @media only screen and (max-width: 850px) {
