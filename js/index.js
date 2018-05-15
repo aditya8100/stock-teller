@@ -14,7 +14,7 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
   percentages = responseAsJSON.percentages
   // date = responseAsJSON.date
   date = "(" + date + ")";
-  if (date == undefined) {
+  if (date == "") {
     date = "";
   }
   $('#title').append(date)
