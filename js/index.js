@@ -12,7 +12,7 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
 
   losers = responseAsJSON.losers
   percentages = responseAsJSON.percentages
-  // date = responseAsJSON.date
+  date = responseAsJSON.date
   date = "(" + date + ")";
   if (date == "()") {
     date = "";
