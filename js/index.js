@@ -1,5 +1,6 @@
 $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"160\" width=\"241\" margin=\"0\" padding=\"0\"/>")
-var losers, percentages, date;
+var losers, percentages, date="";
+
 // Initial
 $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.herokuapp.com/losers", function(response) {
   let responseAsString = JSON.stringify(response);
@@ -7,13 +8,16 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
   console.log("In initial " + responseAsJSON.losers.length)
   console.log(responseAsJSON.losers)
   console.log(responseAsJSON.percentages)
-  console.log(responseAsJSON.date)
+  // console.log(responseAsJSON.date)
 
   losers = responseAsJSON.losers
   percentages = responseAsJSON.percentages
-  date = responseAsJSON.date
-  
-  $('#title').append("(" + date + ")")
+  // date = responseAsJSON.date
+  date = "(" + date + ")";
+  if (date == undefined) {
+    date = "";
+  }
+  $('#title').append(date)
 
   for(var i=0; i < percentages.length - 1; i+=1) {
     for(var j=0; j < percentages.length - 1 - i; j+=1) {
@@ -33,6 +37,7 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
   for(var i=0; i < percentages.length; i++) {
     percentages[i] = (percentages[i] * 1).toFixed(2);
   }
+
   jQuery.ajaxSetup({async:false});
   
   console.log(losers)
