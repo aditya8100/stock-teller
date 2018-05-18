@@ -1,6 +1,6 @@
 $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"160\" width=\"241\" margin=\"0\" padding=\"0\"/>")
 var losers, percentages, date="";
-
+alert("If you see undefined in brackets, please refresh the page until you see a date.")
 // Initial
 $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.herokuapp.com/losers", function(response) {
   let responseAsString = JSON.stringify(response);
@@ -60,6 +60,10 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
     });
   }
     // $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
+    if (losers.length == 0) {
+      let toAppend = "<p class=\"loser\"> There are no stocks which have dropped more than 4% in the past day. </p><br>";
+      $('.content').append(toAppend);
+    }
     jQuery.ajaxSetup({async:true});
   });
 
