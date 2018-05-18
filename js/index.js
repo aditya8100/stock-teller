@@ -60,15 +60,15 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
     });
   }
     // $('#content').append("<img class=\"loading\" src=\"assets/loading.gif\" height=\"100\" width=\"100\" margin=\"0\" padding=\"0\"/>")
-    if (losers.length == 0) {
-      let toAppend = "<p class=\"loser\"> There are no stocks which have dropped more than 4% in the past day. </p><br>";
-      $('.content').append(toAppend);
-    }
     jQuery.ajaxSetup({async:true});
   });
 
 setTimeout(function() {
   $('.loading').remove()
+  if (losers.length == 0) {
+    let toAppend = "<p class=\"loser\"> There are no stocks which have dropped more than 4% in the past day. </p><br>";
+    $('.content').append(toAppend);
+  }
 }, 30000);
 
 setInterval(function() {
