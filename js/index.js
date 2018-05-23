@@ -8,7 +8,7 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
   console.log("In initial " + responseAsJSON.losers.length)
   console.log(responseAsJSON.losers)
   console.log(responseAsJSON.percentages)
-  // console.log(responseAsJSON.date)
+  console.log(responseAsJSON.date)
 
   losers = responseAsJSON.losers
   percentages = responseAsJSON.percentages
