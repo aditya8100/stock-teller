@@ -17,6 +17,7 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
   if (date == "()") {
     date = "";
   }
+  
   $('#title').append(date)
 
   for(var i=0; i < percentages.length - 1; i+=1) {
