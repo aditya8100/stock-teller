@@ -17,7 +17,7 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
   if (date == "()") {
     date = "";
   }
-  
+
   $('#title').append(date)
 
   for(var i=0; i < percentages.length - 1; i+=1) {
@@ -54,7 +54,7 @@ $.get("https://cors-anywhere.herokuapp.com/https://stock-predictor-server.heroku
         var name = response.substring(indexOfName,indexOfNameEnd);
         name = name.trim();
         console.log("name: " + name)
-        let toAppend = "<p class=\"loser\">" + "<a class=\"link\" target=\"_blank\" href=\"https://www.marketwatch.com/investing/stock/" + losers[i].toLowerCase() + "\">" + name + " - " + losers[j] + "</a>" + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[j] + "%</p><br>";
+        let toAppend = "<p class=\"loser\">" + "<a class=\"link\" target=\"_blank\" href=\"https://www.marketwatch.com/investing/stock/" + losers[i].toLowerCase() + "\">" + name + " - " + losers[j] + "</a>" + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[j] + "%<br></p>";
         $('.content').append(toAppend);
         j++;
         $('.loading').remove();
@@ -132,7 +132,7 @@ setInterval(function() {
         var name = response.substring(indexOfName,indexOfNameEnd);
         name = name.trim();
         console.log("name: " + name)
-        let toAppend = "<p class=\"loser\">" + "<a class=\"link\" target=\"_blank\" href=\"https://www.marketwatch.com/investing/stock/" + losers[i].toLowerCase() + "\">" + name + " - " + losers[j] + "</a>" + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[j] + "%</p><br>";
+        let toAppend = "<p class=\"loser\">" + "<a class=\"link\" target=\"_blank\" href=\"https://www.marketwatch.com/investing/stock/" + losers[i].toLowerCase() + "\">" + name + " - " + losers[j] + "</a>" + "&nbsp;&nbsp;&nbsp;&nbsp;🔻" + percentages[j] + "%<br></p>";
         $('.content').append(toAppend);
         i = i + 1;
       });
